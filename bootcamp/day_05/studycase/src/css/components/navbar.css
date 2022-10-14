@@ -2,6 +2,20 @@
   align-items: center;
   background: #1f2937;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 20px 50px 20px 50px;
+}
+
+.navbar .ri-user-fill {
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  background-color: #9ca3af;
+  color: #1f2937;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  justify-content: center;
+  margin-right: 20px;
 }

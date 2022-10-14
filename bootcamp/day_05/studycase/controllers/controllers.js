@@ -14,6 +14,7 @@ const control =
           desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam ipsum
         neque nisi vero saepe repudiandae molestias eaque ex aliquid. Dolorem
         ullam at enim? Itaque sit fuga beatae iusto tenetur molestiae?`,
+          icon: "ri-user-fill",
         },
       ],
     });

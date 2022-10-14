@@ -3,8 +3,9 @@ const main = () => {
   const navbar = document.querySelector(".navbar");
   const url = "http://localhost:88/users/v1/data";
 
-  const navbarTemplate = (datas) => `<div class="brand">
-        <i></i>
+  const navbarTemplate = (datas) => `
+  <i class="${datas.icon}"></i>
+  <div class="brand">
         <h2 class="nav-name">${datas.nama}</h2>
         <h3 class="username">${datas.username}</h3>
         <h4 class="ttl">${datas.ttl}</h4>
