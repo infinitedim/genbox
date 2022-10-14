@@ -1,16 +1,17 @@
 {
-  "name": "studycase",
+  "name": "day_05",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "serve": "nodemon index"
+    "serve": "nodemon --es-module-specifier-resolution=node index"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Dimas Saputra",
+  "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "nodemon": "^2.0.20"
   }
