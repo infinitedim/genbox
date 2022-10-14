@@ -1,0 +1,39 @@
+.card
+  align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  box-shadow: 5px 5px 10px color('gray')
+  width: 30%
+  height: 100%
+  border-radius: 5px
+  margin: 20px auto
+  padding-bottom: 10px
+  &__bg
+    position: relative
+    width: 100%
+    border-radius: 5px
+    img
+      height: 100%
+      border-radius: 5px
+      width: 100%
+    .promo-span
+      border-radius: 5px
+      background: color('primary')
+      color: color('text-white')
+      padding: 10px 20px
+      position: absolute
+      left: -20px
+      top: 20px
+
+  .buy-btn
+    background: color('primary')
+    color: color('text-white')
+    margin: 10px
+    padding: 5px 20px
+    border-radius: 5px
+    border: 1px solid color('text-white')
+
+@media screen and ( max-width: 786px)
+  .card
+    width: 100%

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert("selamat datang di kalkulator sederhana");
+      const pilihan = prompt("Pilih operator, + - * / %");
+
+      let angka_1 = prompt("masukan angka pertama");
+
+      let angka_2 = prompt("masukan angka kedua");
+
+      switch (pilihan) {
+        case "+":
+          alert(parseInt(angka_1) + parseInt(angka_2));
+          break;
+        case "-":
+          alert(parseInt(angka_1) - parseInt(angka_2));
+          break;
+        case "*":
+          alert(parseInt(angka_1) * parseInt(angka_2));
+          break;
+        case "/":
+          alert(parseInt(angka_1) / parseInt(angka_2));
+          break;
+        case "%":
+          alert(parseInt(angka_1) % parseInt(angka_2));
+          break;
+        default:
+          alert("Operator yang anda pilih tidak valid");
+      }
+
+      // if (pilihan === "+") {
+      //   alert(parseInt(angka_1) + parseInt(angka_2));
+      // } else if (pilihan === "-") {
+      //   alert(parseInt(angka_1) - parseInt(angka_2));
+      // } else if (pilihan === "*") {
+      //   alert(parseInt(angka_1) * parseInt(angka_2));
+      // } else if (pilihan === "/") {
+      //   alert(parseInt(angka_1) / parseInt(angka_2));
+      // } else if (pilihan === "%") {
+      //   alert(parseInt(angka_1) % parseInt(angka_2));
+      // } else {
+      //   alert("Operator yang anda pilih tidak valid");
+      // }
+    </script>
+  </body>
+</html>

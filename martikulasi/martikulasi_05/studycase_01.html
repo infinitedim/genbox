@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studycase 01</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        margin: 50px auto;
+      }
+
+      .kotak {
+        align-items: center;
+        box-shadow: 1px 1px 5px gray;
+        display: flex;
+        height: 100px;
+        justify-content: center;
+        margin: auto;
+        width: 100px;
+      }
+
+      .btn-container {
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: repeat(3, 6rem);
+        grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+        position: relative;
+        justify-content: center;
+        gap: 2px;
+      }
+
+      .calc-btn {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      .large {
+        grid-column: span 3;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <div class="kotak kotak_1"></div>
+        <span>+</span>
+        <div class="kotak kotak_2"></div>
+        <span>=</span>
+        <div class="kotak kotak_3"></div>
+      </div>
+      <div class="btn-container">
+        <button class="calc-btn" value="1">1</button>
+        <button class="calc-btn" value="2">2</button>
+        <button class="calc-btn" value="3">3</button>
+        <button class="calc-btn" value="4">4</button>
+        <button class="calc-btn" value="5">5</button>
+        <button class="calc-btn" value="6">6</button>
+        <button class="calc-btn" value="7">7</button>
+        <button class="calc-btn" value="8">8</button>
+        <button class="calc-btn" value="9">9</button>
+        <button class="calc-btn large" value="0">0</button>
+      </div>
+    </main>
+    <script>
+      let buttons = document.querySelectorAll(".calc-btn");
+      let kotak_1 = document.querySelector(".kotak_1");
+      let kotak_2 = document.querySelector(".kotak_2");
+      let kotak_3 = document.querySelector(".kotak_3");
+
+      let cek = 0;
+      let val1 = null;
+      let hasil = null;
+      const main = () => {
+        buttons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            cek < 2
+              ? ((kotak_1.innerHTML = `${(val1 += parseInt(button.value))}`),
+                (hasil = button.value),
+                (cek += 1))
+              : ((kotak_2.innerHTML = `${parseInt(button.value)}`),
+                (kotak_3.innerHTML = parseInt(hasil) + parseInt(button.value)));
+          });
+        });
+      };
+
+      main();
+    </script>
+  </body>
+</html>

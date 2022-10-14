@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: inter;
+      }
+      .container {
+        margin: auto;
+        margin-top: 50px;
+        width: 50%;
+        height: 50%;
+        box-shadow: 5px 5px 5px pink;
+        text-align: center;
+        /* border: 3px solid pink; */
+        background-color: #000;
+        border-radius: 5px;
+      }
+
+      .btn {
+        margin: 20px;
+        padding: 10px;
+        background-color: pink;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .btn:hover {
+        box-shadow: 1px 1px 5px red;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Hello world!</h1>
+        <ul>
+          <li>Merah</li>
+          <li>Kuning</li>
+          <li>Hijau</li>
+        </ul>
+        <button class="btn">Tekan aku</button>
+      </div>
+    </main>
+    <script>
+      let haloDunia = document.querySelector("h1");
+
+      haloDunia.style.color = "red";
+
+      let tombol = document.querySelector(".btn");
+
+      tombol.style.color = "white";
+
+      let list = document.querySelectorAll("li");
+
+      console.log(list);
+      list[0].style.backgroundColor = "red";
+      list[1].style.backgroundColor = "yellow";
+      list[2].style.backgroundColor = "green";
+
+      const container = document.querySelector(".container");
+
+      // container.innerHTML = `<h1>Hallo lagi dunia</h1>`;
+
+      list[2].innerHTML = "Dimas";
+    </script>
+  </body>
+</html>

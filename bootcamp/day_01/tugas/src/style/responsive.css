@@ -1,0 +1,21 @@
+@media screen and (max-width: 786px) {
+  main.main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .create__user h1 {
+    align-self: center;
+  }
+
+  .members h1 {
+    align-self: center;
+  }
+
+  .user__list {
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+  }
+}

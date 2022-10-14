@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      alert("Selamat Datang");
+      const main = () => {
+        let masukanUang = parseInt(prompt("Masukan uang"));
+
+        if (!isNaN(masukanUang)) {
+          alert(new Intl.NumberFormat("en-ID").format(masukanUang));
+        } else {
+          alert("Nilai yang anda masukan bukan angka");
+        }
+      };
+
+      main();
+    </script>
+  </body>
+</html>

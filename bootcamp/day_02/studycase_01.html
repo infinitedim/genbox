@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id" translate="yes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title style="color: red !important">Aplikasi ramalan cuaca</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        color: white;
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      body {
+        background: linear-gradient(
+          130.54deg,
+          #27a5f9 26.95%,
+          rgba(39, 165, 249, 0) 123.41%
+        );
+        background-repeat: no-repeat;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      main.main {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+      }
+
+      main.main .weather-section figure img {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: -10px;
+        left: -30px;
+      }
+
+      main.main hr {
+        border: 2px solid white;
+        width: 40%;
+      }
+
+      main.main .weather-info {
+        position: relative;
+      }
+
+      main.main .weather-info .weather-info-name {
+        background-color: rgba(238, 238, 238, 0.5);
+        padding: 5px 30px;
+        border-radius: 5px;
+        text-transform: capitalize;
+      }
+
+      .weather-messege {
+        font-weight: 400;
+      }
+
+      .card-container {
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+      }
+
+      .text-container {
+        align-items: center;
+        display: flex;
+        width: 100%;
+      }
+
+      .text-container hr {
+        border: 1px solid white;
+        height: 1px;
+      }
+
+      .card {
+        border-radius: 5px;
+        padding: 20px;
+        background-color: white;
+        text-align: center;
+        width: 80%;
+      }
+
+      .card-section {
+        width: 100%;
+      }
+
+      .card-section h1,
+      .card-section h2 {
+        color: black;
+      }
+
+      @media screen and (max-width: 786px) {
+        .card-setion {
+          margin-left: 20px;
+        }
+
+        main.main {
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <section class="weather-section"></section>
+      <section class="card-section">
+        <div class="text-container">
+          <span>Kamis, 8 November 2021</span>
+          <hr />
+        </div>
+        <div class="card-container">
+          <div class="card jogja"></div>
+          <div class="card bekasi"></div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const main = () => {
+        let weather = document.querySelector(".weather-section");
+        let kotaBekasi = document.querySelector(".bekasi");
+        let kotaJogja = document.querySelector(".jogja");
+
+        let ApiFetch = (city) =>
+          new Promise((resolve, reject) => {
+            resolve(
+              fetch(
+                `https://api.weatherbit.io/v2.0/current?key=5331c30297b7451f947eb12efc6844d8&city=${city}&lang=id`
+              ).then((res) => res.json())
+            );
+          });
+
+        let template_jakarta = (datas) => {
+          return `
+            <div class="weather-container">
+              <h1>${datas.city_name}</h1>
+                <div class="weather-info">
+                  <figure>
+                    <img src="https://www.weatherbit.io/static/img/icons/${datas.weather.icon}.png" alt="" srcset="">
+                  </figure>
+                  <h2 class="weather-info-name">${datas.weather.description}, ${datas.app_temp} &deg; C</h2>
+                </div>
+              </div>
+              <hr />
+              <h2 class="weather-messege">Keep save</h2>`;
+        };
+
+        let template_kota_lain = (datas) => {
+          return `<h1>${datas.city_name}</h1>
+                <figure>
+                  <img
+                    src="https://www.weatherbit.io/static/img/icons/${datas.weather.icon}.png"
+                    alt=""
+                  />
+                </figure>
+                <h2>${datas.app_temp} &deg; C</h2>`;
+        };
+
+        async function jakarta() {
+          try {
+            return await ApiFetch("Jakarta");
+          } catch (e) {
+            await console.error(e);
+          }
+        }
+
+        async function jogja() {
+          try {
+            return await ApiFetch("Yogyakarta");
+          } catch (e) {
+            await console.error(e);
+          }
+        }
+
+        async function bekasi() {
+          try {
+            return await ApiFetch("Bekasi");
+          } catch (e) {
+            await console.error(e);
+          }
+        }
+
+        Promise.all([jakarta(), bekasi(), jogja()]).then((res) => {
+          let [jakarta, bekasi, jogja] = res;
+          jakarta.data.forEach((datas) => {
+            weather.innerHTML = template_jakarta(datas);
+          });
+
+          bekasi.data.forEach((datas) => {
+            kotaBekasi.innerHTML = template_kota_lain(datas);
+          });
+
+          jogja.data.forEach((datas) => {
+            kotaJogja.innerHTML = template_kota_lain(datas);
+          });
+        });
+      };
+
+      main();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(122, 218, 232, 1), rgba(11, 161, 221, 1));
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.navbar .list {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+  list-style: none;
+  font-size: 16px;
+}
+
+.navbar .list a {
+  text-decoration: none;
+  color: white;
+}
+
+.hero {
+  color: white;
+  padding: 20px 20px 0 40px;
+  font-size: 2.5em;
+  margin-top: 100px
+}
+
+.text {
+  color: white;
+  width: 60%;
+  padding: 0 20px 20px 40px;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 5px;
+  border-radius: 8px;
+  margin: 20px 0 20px 40px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid white;
+}
+
+.btn-primary {
+  color: #0BA1DD;
+  border: none;
+  margin-right: 0;
+  transition: all 1s;
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  margin-left: 0;
+  transition: all 0.5s;
+}
+
+.btn-primary:hover {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #0BA1DD;
+}
+
+figure .gambar {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  width: 500px;
+}
+
+@media screen and (max-width: 576px) {
+  .navbar .list {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 80%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    background: rgba(11, 161, 221, 1);
+    display: none;
+  }
+
+  .text {
+    width: 80%;
+  }
+
+  figure .gambar {
+    display: none;
+  }
+}
