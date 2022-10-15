@@ -20,6 +20,7 @@
   "rules": {
     "quotes": ["error", "double"],
     "no-param-reassign": "off",
+    "no-unused-vars": "off",
     "prettier/prettier": [
       "error",
       {

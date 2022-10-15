@@ -8,7 +8,6 @@ const main = () => {
   const dots = document.querySelectorAll(".dots");
   const prev = document.querySelector(".prev");
   const next = document.querySelector(".next");
-  const currents = document.querySelectorAll(".current");
 
   const showSlides = () => {
     if (slideIndex > slides.length - 1) slideIndex = 0;
@@ -39,15 +38,11 @@ const main = () => {
     timer = times;
   });
 
-  currents.forEach(() => {
-    currents;
-  });
-
-  const currentSlide = (n) => {
+  function currentSlide(n) {
     slideIndex = n - 1;
     showSlides();
     timer = times;
-  };
+  }
 
   setInterval(() => {
     timer -= 1;
