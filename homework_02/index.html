@@ -65,16 +65,19 @@
           />
         </div>
 
-        <i class="ri-arrow-left-line prev"></i>
-        <i class="ri-arrow-right-line next"></i>
-
-        <div class="dots-container">
-          <input type="radio" class="dot" onclick="currentSlide(1)"></input>
-          <input type="radio" class="dots" onclick="currentSlide(2)"></input>
-          <input type="radio" class="dots" onclick="currentSlide(3)"></input>
-          <input type="radio" class="dots" onclick="currentSlide(4)"></input>
-          <input type="radio" class="dots" onclick="currentSlide(5)"></input>
-        </div>
+        <form class="dots-container">
+          <input
+            class="dots"
+            type="radio"
+            name="slider-dots"
+            value="0"
+            checked
+          />
+          <input class="dots" type="radio" name="slider-dots" value="1" />
+          <input class="dots" type="radio" name="slider-dots" value="2" />
+          <input class="dots" type="radio" name="slider-dots" value="3" />
+          <input class="dots" type="radio" name="slider-dots" value="4" />
+        </form>
       </div>
     </main>
     <script type="module" src="./src/index.js"></script>
