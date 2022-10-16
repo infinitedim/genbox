@@ -11,11 +11,15 @@
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true
+    }
   },
   "plugins": ["prettier"],
   "rules": {
     "quotes": ["error", "double"],
+    "no-param-reassign": "off",
     "prettier/prettier": [
       "error",
       {
