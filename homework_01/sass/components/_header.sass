@@ -1,0 +1,54 @@
+.header
+  &__container
+    background: color('background')
+    width: 100vw
+    padding: 20px
+  &__list
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 20px 0 0 20px
+    width: 90%
+    li
+      display: flex
+      align-items: center
+      &:nth-child(2)
+        width: 80%
+      > input
+        border: none
+        border-radius: 8px 0 0 8px
+        height: 30px
+        padding: 10px
+        width: 100%
+      > button.search
+        background: color('background')
+        border: 3px solid color('text-white')
+        border-radius: 0 8px 8px 0
+        color: color('text-white')
+        height: 30px
+        width: 40px
+      > button.cart-btn
+        background: transparent
+        border: 2px solid color('text-white')
+        border-radius: 5px
+        height: 30px
+        width: 30px
+        > .ri-shopping-cart-2-line
+          color: color('text-white')
+
+.navbar
+  align-items: center
+  color: color('text-white')
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 90%
+  &__list
+    color: color('text-white')
+    display: flex
+    justify-content: space-around
+    width: 40%
+
+@media screen and ( max-width:  786px)
+  .navbar__list
+    width: 50%

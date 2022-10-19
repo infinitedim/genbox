@@ -1,0 +1,33 @@
+.footer
+  align-items: center
+  background: color('background')
+  color: color('text-white')
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  padding: 0
+  width: 100vw
+  &__list
+    align-items: center
+    display: flex
+    justify-content: space-around
+    width: 30%
+    margin: 30px auto
+    > li
+      margin: auto
+      > a > i
+        border-radius: 100%
+        background: color('text-white')
+        color: color('primary')
+        font-size: 20px
+        padding: 8px
+        text-align: center
+        width: 100%
+  > span
+    margin-bottom: 10px
+  > h1
+    margin-top: 10px
+
+@media screen and (max-width: 786px)
+  .footer__list
+    width: 50%
