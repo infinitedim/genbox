@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 import multer, { diskStorage } from "multer";
 
 const app = express();
-const port = 88;
+const port = process.env.PORT || 88;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
