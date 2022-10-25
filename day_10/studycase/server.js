@@ -13,9 +13,9 @@ app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json());
 
-app.use("/users/v1", routes);
+app.use(multer().single("none"));
 
-app.use(multer().single());
+app.use("/users/v1", routes);
 
 app.use((e, req, res, next) => {
   const code = e.code || 500;

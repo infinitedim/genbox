@@ -3,6 +3,7 @@ import Model from "../models/models";
 
 const get = (req, res) => {
   const sql = `SELECT * FROM user`;
+
   Model(sql, res);
 };
 
@@ -30,12 +31,14 @@ const post = (req, res) => {
 
 const search = (req, res) => {
   const id = req.params.id;
+  const sql = `SELECT * FROM user where id='${id}'`;
 
-  const sql = `SELECT user where id='${id}'`;
+  Model(sql, res);
 };
 
 const edit = (req, res) => {
   const error = validationResult(req);
+  const id = req.params.id;
 
   if (!error.isEmpty()) {
     const e = new Error("Invalid value");
@@ -45,14 +48,12 @@ const edit = (req, res) => {
   }
 
   let results = {
-    nama: req.body.title,
-    umur: req.body.author,
-    hobi: req.body.year,
+    nama: req.body.nama,
+    umur: req.body.umur,
+    hobi: req.body.hobi,
   };
 
-  const id = req.params.id;
-
-  const sql = `UPDATE users SET nama='${results.nama}' umur='${results.umur}' hobi='${results.hobi}' where id='${id}'`;
+  const sql = `UPDATE user SET nama='${results.nama}', umur='${results.umur}', hobi='${results.hobi}' where id='${id}'`;
 
   Model(sql, res);
 };
