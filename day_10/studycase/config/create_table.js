@@ -1,4 +1,4 @@
-import db from "../config/db_config";
+import db from "./db_config";
 
 const sql = `CREATE TABLE user
                 (id INT NOT NULL AUTO_INCREMENT,
@@ -8,6 +8,4 @@ const sql = `CREATE TABLE user
                 PRIMARY KEY (id))
 `;
 
-db.query(sql, (e) => {
-  e ? console.error(e) : console.log("Table Created");
-});
+db.query(sql, (e) => (e ? console.error(e) : console.log("Table Created")));

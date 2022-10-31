@@ -1,4 +1,4 @@
-import db from "../config/db_config";
+import db from "./db_config";
 
 const sql = "CREATE DATABASE biodata";
 
