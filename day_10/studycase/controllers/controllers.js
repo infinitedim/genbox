@@ -1,12 +1,6 @@
 import { validationResult } from "express-validator";
 import Model from "../models/models";
 
-let results = {
-  nama: req.body.nama,
-  umur: req.body.umur,
-  hobi: req.body.hobi,
-};
-
 const get = (req, res) => {
   const sql = `SELECT * FROM user`;
 
@@ -23,6 +17,12 @@ const post = (req, res) => {
     throw e;
   }
 
+  let results = {
+    nama: req.body.nama,
+    umur: req.body.umur,
+    hobi: req.body.hobi,
+  };
+
   const sql = `INSERT INTO user (nama, umur, hobi)
             VALUES ('${results.nama}', '${results.umur}', '${results.hobi}')`;
 
@@ -31,7 +31,7 @@ const post = (req, res) => {
 
 const search = (req, res) => {
   const id = req.params.id;
-  const sql = `SELECT * FROM user where id='${id}'`;
+  const sql = `SELECT * FROM user where id='id'`;
 
   Model(sql, res);
 };
@@ -47,7 +47,13 @@ const edit = (req, res) => {
     throw e;
   }
 
-  const sql = `UPDATE user SET nama='${results.nama}', umur='${results.umur}', hobi='${results.hobi}' where id='${id}'`;
+  let results = {
+    nama: req.body.nama,
+    umur: req.body.umur,
+    hobi: req.body.hobi,
+  };
+
+  const sql = `UPDATE user SET nama='${results.nama}', umur='${results.umur}', hobi='${results.hobi}' where id='id'`;
 
   Model(sql, res);
 };
@@ -55,7 +61,7 @@ const edit = (req, res) => {
 const del = (req, res) => {
   const id = req.params.id;
 
-  const sql = `DELETE FROM users WHERE id='${id}'`;
+  const sql = `DELETE FROM users WHERE id='id'`;
 
   Model(sql, res);
 };
