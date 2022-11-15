@@ -2,18 +2,14 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
-  "extends": [
-    "airbnb-base",
-    "plugin:eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "eslint"
-  ],
+  "extends": "standard-with-typescript",
+  "parser": "@typescript-eslint/parser",
   "overrides": [
     {
-      "files": ["*.js", "*.mjs", "*.cjs"]
+      "files": ["*.ts", "*.tsx"]
     }
   ],
   "parserOptions": {
@@ -25,17 +21,22 @@
   },
   "plugins": ["prettier"],
   "rules": {
-    "quotes": ["error", "double"],
-    "jsx-quotes": ["error", "double"],
+    "quotes": ["error", "doubole"],
+    "@typescript-eslint/quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "@typescript-eslint/semi": ["error", "always"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no0unused-vars": "off",
     "prettier/prettier": [
       "error",
       {
         "semi": true,
-        "arrowParens": "always",
-        "endOfLine": "auto",
         "tabWidth": 2,
         "printWidth": 80,
-        "singleQuote": false
+        "singleQuote": false,
+        "endOfLine": "auto",
+        "singleAttributePerLine": true,
+        "trailingComma": "all"
       }
     ]
   }

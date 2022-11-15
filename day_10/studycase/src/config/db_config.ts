@@ -7,9 +7,6 @@ const db = mysql.createConnection({
   database: "biodata",
 });
 
-db.connect((e) => {
-  if (e) throw e;
-  console.log("Database connected");
-});
+db.connect((error: any): void => error ? console.error(error) : console.log("Database connected"));
 
 export default db;

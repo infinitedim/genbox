@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { body } from "express-validator";
+import { body, ValidationChain } from "express-validator";
 import { get, post, search, edit, del } from "../controllers/controllers";
 
-const routes = Router();
+export const routes: Router = Router();
 
-const validation = [
+const validation: ValidationChain[] = [
   body("nama")
     .isLength({ min: 3, max: 50 })
     .withMessage("name at least 5 character"),
@@ -12,14 +12,8 @@ const validation = [
   body("hobi").isLength({ min: 5 }).withMessage("Hobby is required"),
 ];
 
-routes.get("/get", get);
-
-routes.post("/post", validation, post);
-
-routes.get("/search/", search);
-
-routes.put("/edit/:id", validation, edit);
-
-routes.delete("/delete/:id", del);
-
-export default routes;
+routes.get("/users", get);
+routes.post("/users/new", validation, post);
+routes.get("/users/:id", search);
+routes.put("/users/:id/edit", validation, edit);
+routes.delete("/users/:id/delete", del);

@@ -8,4 +8,6 @@ const sql = `CREATE TABLE user
                 PRIMARY KEY (id))
 `;
 
-db.query(sql, (e) => (e ? console.error(e) : console.log("Table Created")));
+db.query(sql, (error: any): void =>
+  error ? console.error(error) : console.log("Table Created"),
+);
