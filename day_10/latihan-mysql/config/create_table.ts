@@ -1,4 +1,5 @@
-const db = require("./db.config");
+import type { MysqlError } from "mysql";
+import db from "./db.config";
 
 const sql = `CREATE TABLE profile
             (id INT NOT NULL AUTO_INCREMENT,
@@ -8,6 +9,6 @@ const sql = `CREATE TABLE profile
             PRIMARY KEY (id))
 `;
 
-db.query(sql, (e) => {
-  e ? console.error(e) : console.log("Table Created");
+db.query(sql, (error: MysqlError | null): void => {
+  error ? console.error(error) : console.log("Table Created");
 });
