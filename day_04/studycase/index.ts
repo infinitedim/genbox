@@ -1,15 +1,15 @@
 import express from "express";
-// import { readFile } from "fs";
-// import __dirname from "dirname";
+import type { Express, Request, Response } from "express";
 import path from "path";
 
-const app = express();
-const port = 8080;
+const app: Express = express();
+const PORT: string | number =
+  process.env.PORT !== undefined ? process.env.PORT : 88;
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response): void => {
   console.log(`${path.dirname}`);
 });
 
-app.listen(port, () => {
-  console.log(`Server is listen on port ${port}`);
+app.listen(PORT, (): void => {
+  console.log(`Server is listen on port ${PORT}`);
 });

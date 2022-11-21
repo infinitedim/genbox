@@ -1,5 +1,9 @@
+
 class Attack {
-  attacking(nama) {
+  xp: any;
+  att: any;
+  lv: any;
+  attacking(nama: any) {
     nama.hp -= 20;
     this.xp += this.att;
     if (this.xp > 100) {
@@ -11,4 +15,4 @@ class Attack {
   }
 }
 
-module.exports = Attack;
+export default Attack;

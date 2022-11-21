@@ -1,16 +1,6 @@
-import express from "express";
-import cors from "cors";
-import routes from "../routes/routes";
+import app from "./api";
 
-// deklarasi variabel
-const app = express();
-const port = 88;
+const PORT: string | number =
+  process.env.PORT !== undefined ? process.env.PORT : 88;
 
-// Menangani cors
-app.use(cors());
-
-// Fungsi middleware
-app.use("/users/v1", routes);
-
-// Jalankan server dan log server listen port
-app.listen(port, () => `Server is listening on port ${port}`);
+app.listen(PORT, (): string => `Server is listening on port ${PORT}`);

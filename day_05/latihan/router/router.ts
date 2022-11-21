@@ -1,9 +1,6 @@
-// Import package yang diperlukan
-import express from "express";
+import { Router } from "express";
 import data from "../controllers/controller";
 
-// Deklarasi variable
-const router = express.Router();
+const router: Router = Router();
 
-// export router dan jalankan fungsi router
-export default router.get("/data", data);
+export default router.get("/users", data);

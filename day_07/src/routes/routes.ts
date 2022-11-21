@@ -1,10 +1,10 @@
-import express from "express";
-import {get, post} from "../controllers/controllers";
+import { Router } from "express";
+import { get, post } from "../controllers/controllers";
 
-const routes = express.Router();
+const routes = Router();
 
-routes.get("/get", get)
+routes.get("/get", get);
 
-routes.post("/post", post)
+routes.post("/post", post);
 
-export default routes
+export default routes;

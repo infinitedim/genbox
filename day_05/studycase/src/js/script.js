@@ -1,7 +1,7 @@
 const main = () => {
   const card = document.querySelector(".card");
   const navbar = document.querySelector(".navbar");
-  const url = "http://localhost:88/users/v1/data";
+  const url = "http://localhost:88/api/v1/users";
 
   const navbarTemplate = (datas) => `
   <i class="${datas.icon}"></i>

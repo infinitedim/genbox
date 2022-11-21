@@ -1,6 +1,8 @@
-import express from "express";
-import control from "../controllers/controllers";
+import { Router } from "express";
+import get from "../controllers/controllers";
 
-const routes = express.Router();
+const routes: Router = Router();
 
-export default routes.get("/data", control);
+routes.get("/users", get);
+
+export default routes;

@@ -1,19 +1,22 @@
-// const fs = require("fs");
-const readLine = require("readline");
+// import fs from "fs";
+import { createInterface } from "readline";
+import type { Interface } from "readline";
 
-let rl = readLine.createInterface({
+let rl: Interface = createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-rl.question("Masukan nama anda: ", (nama) => {
+rl.question("Masukan nama anda: ", (nama: string): void => {
   console.log(`Nama anda ${nama}`);
   rl.close();
 });
 
-// let tulisan = new Uint8Array(Buffer.from("Ohayou sekai"));
+// let tulisan: Uint8Array = new Uint8Array(Buffer.from("Ohayou sekai"));
 
-// fs.writeFile("tulisan.md", tulisan, (e) => {
-//   if (e) throw err;
-//   console.log("udah kesimpen");
-// });
+// fs.writeFile(
+//   "tulisan.md",
+//   tulisan,
+//   (error: NodeJS.ErrnoException | null): void =>
+//     error ? console.error(error) : console.log("udah kesimpen")
+// );

@@ -1,8 +1,13 @@
 /* eslint-disable no-return-assign */
-const Attack = require("./att");
+import Attack from "./att";
 
 class Player extends Attack {
-  constructor(nama) {
+  att: number;
+  nama: string;
+  xp: number;
+  hp: number;
+  lv: number;
+  constructor(nama: string) {
     super();
     this.att = 30;
     this.nama = nama;
@@ -11,7 +16,7 @@ class Player extends Attack {
     this.lv = 1;
   }
 
-  attacked(nama) {
+  attacked(nama: Player) {
     this.hp -= 20;
     nama.xp += this.att;
     return this.hp <= 0
@@ -20,8 +25,8 @@ class Player extends Attack {
   }
 }
 
-const alucard = new Player("Alucard");
-const layla = new Player("Layla");
+const alucard: Player = new Player("Alucard");
+const layla: Player = new Player("Layla");
 
 console.log(alucard.attacking(layla));
 console.log(alucard.attacked(layla));

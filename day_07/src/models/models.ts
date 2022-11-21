@@ -1,7 +1,6 @@
-import mongoose from "mongoose";
-const Schema = mongoose.Schema();
+import { model, Schema } from "mongoose";
 
-const blogModel = Schema(
+const blogModel = new Schema(
   {
     judul: {
       type: String,
@@ -13,12 +12,12 @@ const blogModel = Schema(
     },
     penulis: {
       type: String,
-      required,
+      required: true,
     },
   },
   {
-    timetamps: true,
+    timestamps: true,
   }
 );
 
-export default mongoose.model("blog model", blogModel);
+export default model("blog model", blogModel);
